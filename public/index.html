@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudConsole - Free Script & Tool Runner</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  
+  <!-- Animated Background Gradients -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <div class="app-container">
+    
+    <!-- Top Header -->
+    <header class="main-header">
+      <div class="logo-area">
+        <div class="logo-icon-wrapper">
+          <i data-lucide="terminal" class="logo-icon"></i>
+        </div>
+        <div>
+          <h1>CloudConsole</h1>
+          <p class="subtitle">Free Web & Backend Script Runner</p>
+        </div>
+      </div>
+      <div class="server-status-tag" id="server-status-tag">
+        <span class="status-indicator pinging"></span>
+        <span class="status-text">Connecting...</span>
+      </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="dashboard-grid">
+      
+      <!-- Left Column: Status Board & Info -->
+      <section class="grid-left">
+        
+        <!-- System Status Card -->
+        <div class="card glass-card">
+          <div class="card-header">
+            <i data-lucide="cpu" class="card-icon indigo-glow"></i>
+            <h2>System Resources</h2>
+            <button class="icon-btn" id="refresh-status-btn" title="Refresh System Status">
+              <i data-lucide="rotate-cw"></i>
+            </button>
+          </div>
+          <div class="status-list">
+            <div class="status-item">
+              <span class="label">OS / Platform</span>
+              <span class="value" id="sys-platform">-</span>
+            </div>
+            <div class="status-item">
+              <span class="label">CPU Architecture</span>
+              <span class="value" id="sys-arch">-</span>
+            </div>
+            <div class="status-item">
+              <span class="label">Uptime</span>
+              <span class="value" id="sys-uptime">-</span>
+            </div>
+            <div class="status-item">
+              <span class="label">Memory Usage</span>
+              <span class="value" id="sys-mem">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deployment Quick Guide Card -->
+        <div class="card glass-card">
+          <div class="card-header">
+            <i data-lucide="cloud-lightning" class="card-icon cyan-glow"></i>
+            <h2>Free Cloud Hosting</h2>
+          </div>
+          <p class="info-text">
+            Aap is server ko bilkul free mein 24/7 online deploy kar sakte hain! 
+          </p>
+          <div class="guide-steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-desc">Code ko GitHub par commit karke push karein.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-desc"><a href="https://render.com" target="_blank" class="accent-link">Render.com</a> par free sign up karein.</div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-desc"><b>Web Service</b> banayein, repo link karein aur deploy kar dein!</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Terminal Console Output & Controls -->
+      <section class="grid-right">
+        
+        <!-- Terminal Container -->
+        <div class="card glass-card terminal-card">
+          <div class="card-header border-bottom">
+            <div class="terminal-title">
+              <span class="pulse-dot idle" id="terminal-dot"></span>
+              <h2>Live Terminal Execution</h2>
+            </div>
+            <div class="controls">
+              <button class="btn btn-secondary" id="clear-btn">
+                <i data-lucide="trash-2"></i> Clear Logs
+              </button>
+              <button class="btn btn-primary" id="run-btn">
+                <i data-lucide="play" class="btn-icon"></i> Execute Tool
+              </button>
+            </div>
+          </div>
+
+          <!-- Console Console Area -->
+          <div class="terminal-body">
+            <div class="terminal-content" id="terminal-output">
+              <div class="system-line">[SYSTEM] CloudConsole terminal ready. Click "Execute Tool" to run your custom script.</div>
+            </div>
+          </div>
+
+          <!-- Terminal Footer/Status Bar -->
+          <div class="terminal-footer">
+            <span class="status-pill" id="execution-status">STATUS: IDLE</span>
+            <span class="terminal-info">Node.js Environment</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer copyright info -->
+    <footer class="app-footer">
+      <p>&copy; 2026 CloudConsole Server. Designed beautifully for dynamic cloud executions.</p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
